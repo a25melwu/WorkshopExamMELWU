@@ -10,7 +10,7 @@ public class AudioPlayByMaterial : MonoBehaviour
     {
         Default,
         Water,
-        Metal,
+        Gravel,
     }
     
     [System.Serializable]
