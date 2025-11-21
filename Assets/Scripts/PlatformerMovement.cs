@@ -70,7 +70,7 @@ class PlatformerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        JumpSound(); //call jumping sound function
+        //JumpSound(); //call jumping sound function
         
         velocity = TranslateInputToVelocity(moveInput);
         if (jumpInput && wasGrounded)
@@ -78,7 +78,7 @@ class PlatformerMovement : MonoBehaviour
             maxSpeed = 2.5f;
             velocity.y = jumpForce;
             jumpInput = false;
-            duckInput = false;
+            //duckInput = false;
             
         }
         if (isHeadbutt == true) //added bounce if head is colliding
@@ -91,7 +91,7 @@ class PlatformerMovement : MonoBehaviour
         {
             jumpReleased = false;
             maxSpeed = 5f;
-            duckReleased = true;
+            //duckReleased = true;
             
             //has landed, play landing sound and trigger landing animation
 
@@ -136,11 +136,11 @@ class PlatformerMovement : MonoBehaviour
         }
         else animator.SetBool("Jump", false);
         
-        if (rb.linearVelocity.y < 0f && isGrounded && duckInput)
+        /*if (rb.linearVelocity.y < 0f && isGrounded && duckInput)
         {
             animator.SetBool("Duck", true);
         }
-        else animator.SetBool("Duck", false);
+        else animator.SetBool("Duck", false);*/
         
     }
 
@@ -218,8 +218,6 @@ class PlatformerMovement : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        
-        
         if (context.started && controlEnabled)
         {
             jumpInput = true;
